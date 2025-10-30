@@ -1,0 +1,48 @@
+<?php namespace App\Database\Migrations;
+
+use CodeIgniter\Database\Migration;
+
+/**
+ * Short description of this class usages
+ * @class {name}
+ * @generated_by RobinNcode\db_craft
+ * @package App\Database\Migrations
+ * @extend CodeIgniter\Database\Migration
+ * @generated_at {created_at}
+ */
+
+class {name} extends Migration
+{
+    public function up()
+    {
+        // disable foreign key check ...
+        $this->db->disableForeignKeyChecks();
+
+        $this->forge->addField([
+            {attributes}
+	    ]);
+
+	    // table keys ...
+        {keys}
+
+        // Create Table ...
+        $this->forge->createTable('{table}');
+
+        //enable foreign key check ...
+        $this->db->enableForeignKeyChecks();
+	}
+
+    //--------------------------------------------------------------------
+
+    public function down()
+    {
+        // disable foreign key check ...
+        $this->db->disableForeignKeyChecks();
+
+        // Drop Table ...
+        $this->forge->dropTable('{table}');
+
+        //enable foreign key check ...
+        $this->db->enableForeignKeyChecks();
+    }
+}

@@ -1,0 +1,175 @@
+ERROR - 2025-07-08 12:58:41 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /var/www/html/admin_panel/system/Database/MySQLi/Connection.php:173
+Stack trace:
+#0 /var/www/html/admin_panel/system/Database/MySQLi/Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'example_db', 3306, '', 0)
+#1 /var/www/html/admin_panel/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/admin_panel/system/Database/BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/admin_panel/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /var/www/html/admin_panel/system/Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/admin_panel/system/BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 /var/www/html/admin_panel/app/Controllers/Users.php(37): CodeIgniter\BaseModel->first()
+#7 /var/www/html/admin_panel/system/CodeIgniter.php(934): App\Controllers\Users->login()
+#8 /var/www/html/admin_panel/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#9 /var/www/html/admin_panel/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /var/www/html/admin_panel/index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /var/www/html/admin_panel/system/Database/MySQLi/Connection.php:218
+Stack trace:
+#0 /var/www/html/admin_panel/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/admin_panel/system/Database/BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/admin_panel/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /var/www/html/admin_panel/system/Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#4 /var/www/html/admin_panel/system/BaseModel.php(656): CodeIgniter\Model->doFirst()
+#5 /var/www/html/admin_panel/app/Controllers/Users.php(37): CodeIgniter\BaseModel->first()
+#6 /var/www/html/admin_panel/system/CodeIgniter.php(934): App\Controllers\Users->login()
+#7 /var/www/html/admin_panel/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#8 /var/www/html/admin_panel/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /var/www/html/admin_panel/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-07-08 12:58:41 --> Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+in SYSTEMPATH/Database/BaseConnection.php on line 427.
+ 1 SYSTEMPATH/Database/BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH/Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Controllers/Users.php(37): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Users->login()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-07-08 13:06:49 --> The framework needs the following extension(s) installed and loaded: "GD".
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 54.
+ 1 SYSTEMPATH/Images/Handlers/GDHandler.php(34): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('GD')
+ 2 SYSTEMPATH/Config/Services.php(341): CodeIgniter\Images\Handlers\GDHandler->__construct(Object(Config\Images))
+ 3 SYSTEMPATH/Config/BaseService.php(252): CodeIgniter\Config\Services::image('gd', Object(Config\Images), false)
+ 4 SYSTEMPATH/Config/BaseService.php(193): CodeIgniter\Config\BaseService::__callStatic('image', [...])
+ 5 SYSTEMPATH/Config/Services.php(332): CodeIgniter\Config\BaseService::getSharedInstance('image', null, null)
+ 6 SYSTEMPATH/Config/BaseService.php(252): CodeIgniter\Config\Services::image()
+ 7 APPPATH/Controllers/Website_management.php(506): CodeIgniter\Config\BaseService::__callStatic('image', [])
+ 8 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Website_management->add_post()
+ 9 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Website_management))
+10 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-07-08 13:12:35 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/admin_panel/system/Database/MySQLi/Connection.php:173
+Stack trace:
+#0 /var/www/html/admin_panel/system/Database/MySQLi/Connection.php(173): mysqli->real_connect('db', 'ciuser', Object(SensitiveParameterValue), 'ci4db', 3306, '', 0)
+#1 /var/www/html/admin_panel/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/admin_panel/system/Database/BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/admin_panel/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /var/www/html/admin_panel/system/Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/admin_panel/system/BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 /var/www/html/admin_panel/app/Controllers/Website_management.php(486): CodeIgniter\BaseModel->first()
+#7 /var/www/html/admin_panel/system/CodeIgniter.php(934): App\Controllers\Website_management->add_post()
+#8 /var/www/html/admin_panel/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Website_management))
+#9 /var/www/html/admin_panel/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /var/www/html/admin_panel/index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/admin_panel/system/Database/MySQLi/Connection.php:218
+Stack trace:
+#0 /var/www/html/admin_panel/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/admin_panel/system/Database/BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/admin_panel/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /var/www/html/admin_panel/system/Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#4 /var/www/html/admin_panel/system/BaseModel.php(656): CodeIgniter\Model->doFirst()
+#5 /var/www/html/admin_panel/app/Controllers/Website_management.php(486): CodeIgniter\BaseModel->first()
+#6 /var/www/html/admin_panel/system/CodeIgniter.php(934): App\Controllers\Website_management->add_post()
+#7 /var/www/html/admin_panel/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Website_management))
+#8 /var/www/html/admin_panel/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /var/www/html/admin_panel/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-07-08 13:12:35 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+in SYSTEMPATH/Database/BaseConnection.php on line 427.
+ 1 SYSTEMPATH/Database/BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `id` = :id:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH/Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Controllers/Website_management.php(486): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Website_management->add_post()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Website_management))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-07-08 13:12:41 --> mysqli_sql_exception: Table 'ci4db.users' doesn't exist in /var/www/html/admin_panel/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /var/www/html/admin_panel/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 /var/www/html/admin_panel/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /var/www/html/admin_panel/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /var/www/html/admin_panel/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /var/www/html/admin_panel/system/Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/admin_panel/system/BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 /var/www/html/admin_panel/app/Controllers/Website_management.php(30): CodeIgniter\BaseModel->first()
+#7 /var/www/html/admin_panel/system/CodeIgniter.php(934): App\Controllers\Website_management->index()
+#8 /var/www/html/admin_panel/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Website_management))
+#9 /var/www/html/admin_panel/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /var/www/html/admin_panel/index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-07-08 13:12:41 --> Table 'ci4db.users' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `id` = :id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH/Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH/Controllers/Website_management.php(30): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Website_management->index()
+ 6 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Website_management))
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-07-08 13:12:50 --> mysqli_sql_exception: Table 'ci4db.users' doesn't exist in /var/www/html/admin_panel/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /var/www/html/admin_panel/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 /var/www/html/admin_panel/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /var/www/html/admin_panel/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /var/www/html/admin_panel/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /var/www/html/admin_panel/system/Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/admin_panel/system/BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 /var/www/html/admin_panel/app/Controllers/Website_management.php(30): CodeIgniter\BaseModel->first()
+#7 /var/www/html/admin_panel/system/CodeIgniter.php(934): App\Controllers\Website_management->index()
+#8 /var/www/html/admin_panel/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Website_management))
+#9 /var/www/html/admin_panel/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /var/www/html/admin_panel/index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-07-08 13:12:50 --> Table 'ci4db.users' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `id` = :id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH/Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH/Controllers/Website_management.php(30): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Website_management->index()
+ 6 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Website_management))
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-07-08 13:14:31 --> Trying to access array offset on value of type null
+in APPPATH/Views/website_management/post_categories.php on line 52.
+ 1 APPPATH/Views/website_management/post_categories.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH/Views/website_management/post_categories.php', 52)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/website_management/post_categories.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('website_management/post_categories', [], true)
+ 5 APPPATH/Controllers/Website_management.php(342): view('website_management/post_categories', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Website_management->post_categories()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Website_management))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-07-08 13:16:07 --> Trying to access array offset on value of type null
+in APPPATH/Views/website_management/post_categories.php on line 52.
+ 1 APPPATH/Views/website_management/post_categories.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH/Views/website_management/post_categories.php', 52)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/website_management/post_categories.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('website_management/post_categories', [], true)
+ 5 APPPATH/Controllers/Website_management.php(342): view('website_management/post_categories', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Website_management->post_categories()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Website_management))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

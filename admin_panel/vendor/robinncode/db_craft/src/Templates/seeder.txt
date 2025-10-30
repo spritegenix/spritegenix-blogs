@@ -1,0 +1,41 @@
+<?php namespace App\Database\Seeds;
+
+use CodeIgniter\Database\Seeder;
+use ReflectionException;
+
+/**
+ * Short description of this class usages
+ * @class {name}
+ * @generated_by RobinNcode\db_craft
+ * @package App\Database\Seeds
+ * @extend CodeIgniter\Database\Seeder
+ * @generated_at {created_at}
+ */
+
+class {name} extends Seeder
+{
+    /**
+     * @throws ReflectionException
+     */
+    public function run(): void
+    {
+        // disable foreign key check ...
+        $this->db->disableForeignKeyChecks();
+
+        // Table Data ...
+        {seeder}
+        
+        // Cleaning up the table before seeding ...
+        $this->db->table('{table}')->truncate();
+
+        //Using Query Builder Class ...
+        try {
+            $this->db->table('{table}')->insertBatch(${table});
+        } catch (ReflectionException $e) {
+            throw new ReflectionException($e->getMessage());
+        }
+
+        //enable foreign key check ...
+        $this->db->enableForeignKeyChecks();
+    }
+}
