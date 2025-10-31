@@ -57,6 +57,7 @@ app/Config/App.php
 admin_panel/app/Config/App.php
 app/Config/Database.php
 admin_panel/app/Config/Database.php
+admin_panel/.htaccess
 
 # OS generated files
 .DS_Store
