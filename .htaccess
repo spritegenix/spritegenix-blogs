@@ -1,26 +1,10 @@
-# Disable directory browsing
-Options -Indexes
-
-# ----------------------------------------------------------------------
-# Rewrite engine
-# ----------------------------------------------------------------------
-
 RewriteEngine On
 
-# Force HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Serve static files directly (CSS, JS, images, etc.)
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^.*$ - [L]
 
-# Redirect www to non-www with HTTPS
-RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
-
-# Checks to see if the user is attempting to access a valid file,
-# such as an image or css document, if this isn't true it sends the
-# request to the front controller, index.php
+# Route other requests (non-existing files or directories) to CodeIgniter
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([\s\S]*)$ index.php/$1 [L,NC,QSA]
-
-# Disable server signature
-ServerSignature Off
+RewriteRule ^(.*)$ index.php/$1 [L]

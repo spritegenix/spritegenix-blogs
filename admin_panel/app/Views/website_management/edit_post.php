@@ -186,9 +186,9 @@
                                 <option value="blog" <?php if ($po['post_name'] == 'blog') {
                                                             echo "selected";
                                                         } ?>>Blog</option>
-                                <option value="caseStudy" <?php if ($po['post_name'] == 'caseStudy') {
+                                <!-- <option value="caseStudy" <?php if ($po['post_name'] == 'caseStudy') {
                                                             echo "selected";
-                                                        } ?>>Case Study</option>
+                                                        } ?>>Case Study</option> -->
                                 <!-- <option value="project" < ?php if ($po['title'] == 'project') {
                                                             echo "selected";
                                                         } ?>>Project</option> -->

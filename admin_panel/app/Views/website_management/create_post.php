@@ -151,10 +151,10 @@
                     <div class="form-group">
                         <div class="input-box">
                             <label class="input-label">Post Type</label>
-                            <select class="input-1" id="post_name" name="post_name" required onfocus="setFocus(true)" onblur="setFocus(false)" onchange="setChange()">
+                            <select class="input-1" id="post_name" default="blog" name="post_name" required onfocus="setFocus(true)" onblur="setFocus(false)" onchange="setChange()">
                                 <option value="">Select</option>
                                 <option value="blog">Blog</option>
-                                <option value="caseStudy">Case Study</option>
+                                <!-- <option value="caseStudy">Case Study</option> -->
                                 <!-- <option value="project">Project</option> -->
                             </select>
                         </div>
