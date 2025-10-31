@@ -7,7 +7,7 @@
             <div class="banner-inner">
                 <div class="auto-container">
                     <div class="inner-container clearfix">
-                        <h1><?= esc(substr($post['title'], 0, 40)) ?></h1>
+                        <h1><?= esc($post['title']) ?></h1>
                         <div class="page-nav">
                             <ul class="bread-crumb clearfix">
                                 <li><a href="https://www.spritegenix.com/">Home</a></li>
@@ -43,29 +43,32 @@
                                                 <!-- <li><span class="far fa-comments"></span> 0 Comments</li> -->
                                             </ul>
                                         </div>
-                                        <h4><?= esc($post['title']) ?></h4>
-                                        <div class="text">
+                                        <!-- <h4><?= esc($post['title']) ?></h4> -->
+                                        <div class="text texteditors">
                                             <?= $post['description'] ?>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="info-row clearfix">
-                                    <div class="tags-info"><strong>Tags:</strong> 
+                                    <div class="tags-info"><strong>Tags:</strong>
                                         <?php if (!empty($post['post_tags']) && is_array($post['post_tags'])): ?>
-                                            <?php foreach ($post['post_tags'] as $tag): ?>
-                                                <a href="<?= base_url('tag/' . esc($tag['slug'])) ?>"><?= esc($tag['name']) ?></a>
-                                                <?php if (next($post['post_tags'])): ?>, <?php endif; ?>
-                                            <?php endforeach; ?>
+                                            <?php
+                                            $tagLinks = [];
+                                            foreach ($post['post_tags'] as $tag) {
+                                                $tagLinks[] = '<a href="' . base_url('tag/' . esc($tag['slug'])) . '">' . esc($tag['name']) . '</a>';
+                                            }
+                                            echo implode(', ', $tagLinks);
+                                            ?>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="cat-info"><strong>Category:</strong> <a href="<?= base_url('category/' . esc($post['category_slug'])) ?>"><?= esc($post['cat_name']) ?></a></div>
                                 </div>
+                                <div class="cat-info"><strong>Category:</strong> <a href="<?= base_url('category/' . esc($post['category_slug'])) ?>"><?= esc($post['cat_name']) ?></a></div>
                             </div>
                         </div>
                     </div>
                        <!--Sidebar Side-->
-                    <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
-                        <aside class="sidebar blog-sidebar sticky-sidebar">
+                    <div class="sidebar-side col-lg-4 col-md-12 col-sm-12 sticky-sidebar">
+                        <aside class="sidebar blog-sidebar">
                             <!--Sidebar Widget-->
                         
 
@@ -117,5 +120,3 @@
 
     </div>
     <!--End pagewrapper-->
-
-  

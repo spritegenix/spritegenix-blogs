@@ -34,7 +34,7 @@
                                 <div class="inner-box">
                                     <div class="" style="height: 400px;">
                                         <?php if (!empty($post['featured']) ): ?>
-                                            <a  href="<?= base_url('blog/' . esc($post['slug'])) ?>"><img style="width: 100%; height: 100%; object-fit: cover" src="<?= base_url("admin_panel/public/images/posts/" . esc($post['featured'])) ?>" alt="<?= esc($post['alt']) ?>"></a>
+                                            <a  href="<?= base_url(  esc($post['slug'])) ?>"><img style="width: 100%; height: 100%; object-fit: cover" src="<?= base_url("admin_panel/public/images/posts/" . esc($post['featured'])) ?>" alt="<?= esc($post['alt']) ?>"></a>
                                         <?php else: ?>
                                             <a href="<?= base_url("/public/images/resource/default-blog-image.jpg") ?>" alt="Default Blog Image"></a>
                                         <?php endif; ?>
@@ -47,9 +47,9 @@
                                                 <!-- <li><span class="far fa-comments"></span> 0 Comments</li> -->
                                             </ul>
                                         </div>
-                                        <h5><a href="<?= base_url('blog/' . esc($post['slug'])) ?>"><?= esc(substr($post['title'], 0, 50)) ?><?= strlen($post['title']) > 50 ? '...' : '' ?></a></h5>
-                                        <div class="text"><?= esc(substr($post['short_description'], 0, 50)) ?><?= strlen($post['short_description']) > 50 ? '...' : '' ?></div>
-                                        <div class="link-box"><a class="theme-btn" href="<?= base_url('blog/' . esc($post['slug'])) ?>"><span
+                                        <h5><a href="<?= base_url(  esc($post['slug'])) ?>"><?= esc(substr($post['title'], 0, 70)) ?><?= strlen($post['title']) > 70 ? '...' : '' ?></a></h5>
+                                        <div class="text"><?= esc(substr($post['short_description'], 0, 80)) ?><?= strlen($post['short_description']) > 80 ? '...' : '' ?></div>
+                                        <div class="link-box"><a class="theme-btn" href="<?= base_url(  esc($post['slug'])) ?>"><span
                                                     class="flaticon-next-1"></span></a></div>
                                     </div>
                                 </div>

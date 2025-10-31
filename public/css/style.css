@@ -6069,7 +6069,7 @@ img.lazy-image.loaded {
 
 .news-block .lower-box h5 {
   text-transform: uppercase;
-  font-size: 34px;
+  font-size: 24px;
   color: var(--thm-black);
   margin-bottom: 35px;
 }
@@ -6721,9 +6721,9 @@ img.lazy-image.loaded {
   margin-bottom: 5px;
 }
 
-.main-footer .info-widget ul li.address {
+/* .main-footer .info-widget ul li.address {
   margin-bottom: 20px;
-}
+} */
 
 .main-footer .info-widget ul li .icon {
   position: absolute;
@@ -11406,6 +11406,7 @@ img.lazy-image.loaded {
 .sidebar-page-container .sidebar-side {
   position: relative;
   margin-bottom: 30px;
+  height: 100vh;
 }
 
 .sidebar-page-container .sidebar {
@@ -11414,7 +11415,7 @@ img.lazy-image.loaded {
 
 .sticky-sidebar {
   position: -webkit-sticky; /* For Safari */
-  position: sticky;
+  position: sticky !important;
   top: 100px; /* Adjust this value as needed for proper spacing from the top */
   z-index: 10; /* Ensure it stays above other content */
 }
@@ -31121,4 +31122,53 @@ img.lazy-image.loaded {
       }
     }
   }
+}
+.texteditors{
+  line-height: normal !important;
+  p, h1, h2, h3, h4, h5, h6, li{
+    margin-bottom: 0 !important;
+    /* margin-top: 20px !important; */
+    /* line-height: 1.3rem !important; */
+  }
+   h1, h2, h3, h4, h5, h6{
+    margin-top: 20px !important;
+   }
+   a {
+    color: #ffaa17 !important;
+   }
+   a:hover {
+    color: #ffaa17 !important;
+   }
+   p{
+    line-height: 1.8em !important;
+   }
+  ol{
+    li{
+    line-height: 1em !important;
+   }
+  }
+   ol{
+    margin-top: 20px !important;
+   }
+
+}
+.texteditors ol {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style: decimal;
+}
+
+.texteditors ol li {
+  list-style: inherit;
+  /* font-size: 0.9em; */
+}
+
+.texteditors ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.texteditors ul li {
+  list-style: inherit;
 }

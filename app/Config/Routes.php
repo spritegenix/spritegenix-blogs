@@ -7,9 +7,9 @@ use CodeIgniter\Router\RouteCollection;
  */
 // $routes->get('/', 'Home::index');
 $routes->get('/', 'Blog::index');
-$routes->get('/blog/(:segment)', 'Blog::details/$1');
 $routes->get('/tag/(:segment)', 'Blog::postsByTag/$1');
 $routes->get('/category/(:segment)', 'Blog::postsByCategory/$1');
+$routes->get('/(:segment)', 'Blog::details/$1');
 // $routes->get('/casestudy', 'CaseStudy::index');
 // $routes->get('/casestudy/(:segment)', 'CaseStudy::details/$1');
 // $routes->get('/casestudy/tag/(:segment)', 'CaseStudy::postsByTag/$1');

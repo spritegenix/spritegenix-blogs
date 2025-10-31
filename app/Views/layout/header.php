@@ -214,8 +214,8 @@
                         <nav class="main-menu navbar-expand-md navbar-light">
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
-                                    <li class=""><a
-                                            href="<?= base_url("/")?>">Home</a>
+                                    <li ><a
+                                            href="https://www.spritegenix.com">Home</a>
                                    
                                     </li>
                                     <li class="">
@@ -239,7 +239,7 @@
                                        
                                     </li>
                                
-                                    <li class=""><a href="<?= base_url('/') ?>">Blog</a>
+                                    <li class="current"><a href="<?= base_url('/') ?>">Blog</a>
                                     
                                     </li>
                                     <li class="">
@@ -304,4 +304,3 @@
                 </div><!-- /.side-menu__content -->
             </div><!-- /.side-menu__block-inner -->
         </div><!-- /.side-menu__block -->
-
